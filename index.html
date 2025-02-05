@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Security Gamification</title>
+    <link rel="icon" type="image/x-icon" href="./images/fav-icon.jpeg">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="company-logo">
+            <img src="./images/opentext-logo_inverse.svg" alt="OpenText">
+        </div>
+        <div class="logo">Security Gamification</div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="leaderboard.html">Leaderboard</a>
+        </nav>
+    </header>
+    <section id="intro">
+        <h1>Welcome to Security Gamification</h1>
+        <p>Learn about security topics with interactive training and quizzes. Improve your skills and compete on the leaderboard!</p>
+    </section>
+
+    <section id="courses">
+        <h2>Select a Security Topic</h2>
+        <div class="topic-cards">
+            <div class="topic-card">
+                <h3>XSS</h3>
+                <a href="learn.html?topic=phishing">
+                    <button class="course-btn">Learn</button>
+                </a>
+                <a href="quiz.html?topic=phishing">
+                    <button class="course-btn">Start Quiz</button>
+                </a>
+                <a href="./codingChallenge/codingChallenge.html">
+                    <button class="course-btn">Coding Challenge</button>
+                </a>
+            </div>
+            <div class="topic-card">
+                <h3>Malware</h3>
+                <a href="learn.html?topic=malware">
+                    <button class="course-btn">Learn</button>
+                </a>
+                <a href="quiz.html?topic=malware">
+                    <button class="course-btn">Start Quiz</button>
+                </a>
+            </div>
+            <div class="topic-card">
+                <h3>Social Engineering</h3>
+                <a href="learn.html?topic=social-engineering">
+                    <button class="course-btn">Learn</button>
+                </a>
+                <a href="quiz.html?topic=social-engineering">
+                    <button class="course-btn">Start Quiz</button>
+                </a>
+            </div>
+            <!-- Add more topics here -->
+        </div>
+    </section>
+</body>
+</html>

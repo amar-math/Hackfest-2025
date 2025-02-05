@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XSS Security Challenge</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="./codingChallenge.js" defer></script>
+    <style>
+        /* Previous styles remain the same */
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Poppins:wght@400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #1a1c2c 0%, #2a2d3e 100%);
+            color: #e2e8f0;
+            line-height: 1.6;
+            padding: 2rem;
+            min-height: 100vh;
+        }
+        header {
+    background: linear-gradient(to right bottom, rgba(25, 34, 74, 0.5) 0%, rgba(34, 46, 97, 0.5) 25%, rgba(35, 52, 106, 0.5) 65%, rgba(20, 102, 147, 0.5) 90%, rgba(8, 140, 178, 0.5) 100%);
+    color: #fff;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    /* line 50, scss/main.scss */
+    header .logo {
+        font-size: 1.8em;
+        font-weight: bold; }
+    /* line 55, scss/main.scss */
+    header nav a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 1.5rem;
+        transition: color 0.3s ease; }
+        /* line 61, scss/main.scss */
+    header nav a:hover {
+    color: #f4f4f4; }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+    }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            background: linear-gradient(45deg, #61dafb, #a8e6cf);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .game-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .stats-container {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: linear-gradient(135deg, #1a1c2c 0%, #2a2d3e 100%);
+            padding: 1rem;
+            border-radius: 0 0 12px 12px;
+        }
+
+        .stat-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            animation: slideIn 0.5s ease-out;
+        }
+
+        .progress-bar {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            height: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+            margin: 1rem 0;
+        }
+
+        .progress {
+            height: 100%;
+            width: 0;
+            background: linear-gradient(90deg, #61dafb, #a8e6cf);
+            transition: width 0.5s ease-out;
+        }
+
+        pre {
+            font-family: 'JetBrains Mono', monospace;
+            background: #282a36;
+            padding: 1.5rem;
+            border-radius: 12px;
+            overflow-x: auto;
+            margin: 1rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        pre div {
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        pre div:hover {
+            background: rgba(97, 218, 251, 0.1);
+            transform: translateX(5px);
+        }
+
+        .options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin: 1.5rem 0;
+            padding: 2rem 0;
+        }
+
+        button {
+            background: linear-gradient(45deg, #61dafb, #a8e6cf);
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            color: #1a1c2c;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            transform: scale(1);
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(97, 218, 251, 0.3);
+        }
+
+        .try-again-button {
+            background: linear-gradient(45deg, #ff6b6b, #ffd93d);
+            margin-top: 1rem;
+        }
+
+        .explanation {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-top: 2rem;
+            animation: slideUp 0.5s ease-out;
+            margin-bottom: 4rem;
+        }
+
+        #feedback {
+            text-align: center;
+            font-size: 1.2rem;
+            margin: 1rem 0;
+            min-height: 2rem;
+            padding: 1rem;
+            position: relative;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(-20px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .correct {
+            color: #a8e6cf;
+        }
+
+        .incorrect {
+            color: #ff6b6b;
+        }
+
+        .section {
+            margin: 2rem 0;
+            scroll-margin-top: 150px;
+        }
+		
+		.celebration-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+        animation: fadeIn 0.5s ease-out;
+    }
+
+    .celebration-content {
+        background: linear-gradient(135deg, #1a1c2c 0%, #2a2d3e 100%);
+        padding: 2rem;
+        border-radius: 16px;
+        text-align: center;
+        max-width: 500px;
+        animation: celebrationPop 0.5s ease-out;
+    }
+
+    .celebration-title {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        background: linear-gradient(45deg, #61dafb, #a8e6cf);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .celebration-score {
+        font-size: 1.5rem;
+        margin: 1rem 0;
+    }
+
+    .celebration-message {
+        margin: 1rem 0;
+    }
+
+    .restart-button {
+        background: linear-gradient(45deg, #61dafb, #a8e6cf);
+        border: none;
+        padding: 1rem 2rem;
+        border-radius: 8px;
+        color: #1a1c2c;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-top: 1rem;
+    }
+
+    .restart-button:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 12px rgba(97, 218, 251, 0.3);
+    }
+
+    .confetti {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background: #61dafb;
+        animation: confettiFall 3s ease-out infinite;
+    }
+
+    @keyframes celebrationPop {
+        0% { transform: scale(0.8); opacity: 0; }
+        50% { transform: scale(1.1); }
+        100% { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes confettiFall {
+        0% { transform: translateY(-100vh) rotate(0deg); }
+        100% { transform: translateY(100vh) rotate(720deg); }
+    }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="company-logo">
+            <img src="../images/opentext-logo_inverse.svg" alt="OpenText">
+        </div>
+        <div class="logo">Security Gamification</div>
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="leaderboard.html">Leaderboard</a>
+        </nav>
+    </header>
+    <div class="container">
+        <!-- Previous HTML structure remains the same -->
+        <div class="game-header">
+            <h2><i class="fas fa-shield-alt"></i> XSS Security Challenge</h2>
+            <p>Identify the vulnerable line and choose the correct fix</p>
+        </div>
+
+        <div class="stats-container">
+            <div class="stat-box">
+                <i class="fas fa-clock"></i> Time Left: <span id="timer">30</span>s
+            </div>
+            <div class="stat-box">
+                <i class="fas fa-star"></i> Score: <span id="score">0</span>
+            </div>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+        </div>
+
+        <div class="section" id="codeSection">
+            <pre id="codeSnippet"></pre>
+        </div>
+        
+        <div class="section" id="feedbackSection">
+            <div id="feedback"></div>
+            <div id="options" class="options"></div>
+        </div>
+        
+        <div class="section" id="explanationSection">
+            <div id="explanation" class="explanation">
+                <h3><i class="fas fa-lightbulb"></i> Explanation</h3>
+                <p id="explanationText"></p>
+                <h3><i class="fas fa-code"></i> Corrected Code:</h3>
+                <pre id="correctedCode"></pre>
+            </div>
+        </div>
+    </div>
+	<div class="celebration-overlay" id="celebrationOverlay">
+    <div class="celebration-content">
+        <h2 class="celebration-title">🎉 Congratulations!</h2>
+        <p class="celebration-message">You've completed all levels!</p>
+        <div class="celebration-score">Final Score: <span id="finalScore">0</span></div>
+        <button class="restart-button" onclick="location.reload()">
+            <i class="fas fa-redo"></i> Play Again
+        </button>
+    </div>
+</div>
+</body>
+</html>
