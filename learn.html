@@ -14,57 +14,137 @@
     <script src="./js/video/skel.min.js" defer></script>
     <script src="./js/video/util.js" defer></script>
     <script src="./js/video/main.js" defer></script>
+    <link rel="icon" type="image/x-icon" href="./images/fav-icon.jpeg">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <header>
         <div class="company-logo">
             <img src="./images/opentext-logo_inverse.svg" alt="OpenText">
         </div>
-        <div class="logo">Security Gamification</div>
         <nav>
             <a href="index.html">Home</a>
-            <a href="leaderboard.html">Leaderboard</a>
         </nav>
     </header>
-    <div id="page1"></div>
+    <div id="page1">
+       
+    </div>
     <div id="page2"></div>
     <div id="page3"></div>
+    <div id="page4"></div>
     <div class="container">
-        <div class="page page1">Slide 1: Introduction</div>
+        <div class="page page1">
+            <img src="images/WhatIsXss.png" alt="">
+        </div>
         <div class="page page2">
-           Slide 2
+            <h2 class="animate-card-title">Hover on cards to know common types of XSS Attacks</h2>
+            <div class="slide2-container">
+                <div class="card">
+                  <div class="img-container">
+                    <img src="./images/stored_xss_attack.jpeg" alt=""/>
+                  </div>
+                  <div class="card-details">
+                    <h2>Stored XSS</h2>
+                    <p>Attackers inject malicious scripts into a website's data storage, such as a database or comment section, which are later retrieved and executed by other users</p>
+                  </div>
+                </div>
+                 <div class="card">
+                  <div class="img-container">
+                    <img src="./images/ReflectedXss.jpg" alt=""/>
+                  </div>
+                  <div class="card-details">
+                    <h2>Reflected XSS</h2>
+                    <p>Attackers craft malicious scripts that are reflected back to the user from the server after being submitted in a request, such as through search queries or form inputs.
+                    </p>
+                  </div>
+                </div>
+                 <div class="card">
+                  <div class="img-container">
+                    <img src="./images/DOM_XSS_Card.jpeg" alt=""/>
+                  </div>
+                  <div class="card-details">
+                    <h2>DOM-Based XSS</h2>
+                    <p>Attackers exploit vulnerabilities in a website's client-side JavaScript code to execute malicious scripts without requiring server-side interactions</p>
+                  </div>
+                </div>
+                </div>
         </div>
         <div class="page page3">
+           
             <div id="main">
+                <h2 class="video-title animate-character">XSS: Your Video Guide to Not Getting Hacked</h2>
                 <div class="inner">
                     <div class="thumbnails">
                         <div class="box">
-                            <a href="https://youtu.be/EoaDgUgS6QA?si=kbRo-w9rFBaGKt_D" class="image fit"><img src="images/pic01.jpg" alt="" /></a>
+                            <a href="https://youtu.be/wu6FAsiFhv0?si=fmHTm9IZfwesDoo2" class="image fit">
+                                <img src="images/XSS_Thumbnail-1.jpg" alt="" />
+                            </a>
                             <div class="inner">
-                                <h3>Nascetur nunc varius commodo</h3>
-                                <p>Interdum amet accumsan placerat commodo ut amet aliquam blandit nunc tempor lobortis nunc non. Mi accumsan.</p>
-                                <a href="https://youtu.be/EoaDgUgS6QA?si=kbRo-w9rFBaGKt_D" class="button fit" data-poptrox="youtube,800x400">Watch</a>
+                                <h3>Code Injection</h3>
+                                <p>Code Injection is a cyberattack where malicious code is inserted into a vulnerable application to alter its behavior.</p>
+                                <a href="https://youtu.be/wu6FAsiFhv0?si=fmHTm9IZfwesDoo2" class="button fit" data-poptrox="youtube,800x400">Watch</a>
                             </div>
                         </div>
                         <div class="box">
-                            <a href="https://youtu.be/s6zR2T9vn2c" class="image fit"><img src="images/pic02.jpg" alt="" /></a>
+                            <a href="https://youtu.be/hSc6WmsbXmI?si=PL2YhKkJ78QcYklS" class="image fit">
+                                <img src="images/XSS_Thumbnail-2.jpg" alt="" />
+                            </a>
                             <div class="inner">
-                                <h3>Nascetur nunc varius commodo</h3>
-                                <p>Interdum amet accumsan placerat commodo ut amet aliquam blandit nunc tempor lobortis nunc non. Mi accumsan.</p>
-                                <a href="https://youtu.be/s6zR2T9vn2c" class="button style2 fit" data-poptrox="youtube,800x400">Watch</a>
+                                <h3>Data Theft</h3>
+                                <p>Data Theft occurs when attackers steal sensitive information, such as passwords, credit card details, or personal data.</p>
+                                <a href="https://youtu.be/hSc6WmsbXmI?si=PL2YhKkJ78QcYklS" class="button style2 fit" data-poptrox="youtube,800x400">Watch</a>
                             </div>
                         </div>
                         <div class="box">
-                            <a href="https://youtu.be/s6zR2T9vn2c" class="image fit"><img src="./images/pic0.jpg" alt="" /></a>
+                            <a href="https://youtu.be/Th6n3KWCAL4?si=4-n32mQpmoy8v--Q" class="image fit">
+                                <img src="./images/XSS_Thumbnail-3.jpg" alt="" />
+                            </a>
                             <div class="inner">
-                                <h3>Nascetur nunc varius commodo</h3>
-                                <p>Interdum amet accumsan placerat commodo ut amet aliquam blandit nunc tempor lobortis nunc non. Mi accumsan.</p>
-                                <a href="https://youtu.be/s6zR2T9vn2c" class="button style3 fit" data-poptrox="youtube,800x400">Watch</a>
+                                <h3>Website Compromise</h3>
+                                <p>Website Compromise happens when attackers exploit vulnerabilities. This can deface pages, redirect users, steal sensitive data, or install malware.</p>
+                                <a href="https://youtu.be/Th6n3KWCAL4?si=4-n32mQpmoy8v--Q" class="button style3 fit" data-poptrox="youtube,800x400">Watch</a>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="knowledge-ai"><a href="https://chatgpt.com/" target="_blank">Test Your Security Knowledge with AI</a></div>
             </div>
+        </div>
+        <div class="page page4">
+            <div class="title">
+                <h2 class="animate-card-title">Mitigating XSS Vulnerabilities: Best Practices
+                </h2>
+              </div>
+            <div class="mitigation-cards">
+                <div class="card1">
+                    <img src="./images/Vector-Shield.png">
+                    <h3>Input Validation and Sanitization</h3>
+                    <p>Filter and sanitize user inputs before processing, removing or escaping potentially harmful characters.
+                    </p>
+                  </div>
+                  
+                  <div class="card2">
+                    <img src="./images/OutputEncoding.png" alt="Eiffel Tower">
+                    <h3>Output Encoding</h3>
+                    <p>Encode output before rendering it to the browser, preventing malicious scripts from being interpreted as HTML.</p>
+                  </div>
+                  
+                  <div class="card3">
+                    <img src="./images/vectorLock.png" alt="">
+                    <h3>Content Security Policy (CSP)
+                    </h3>
+                    <p>Define a policy that restricts the resources that can be loaded and executed on a website, limiting the impact of XSS attacks.
+                    </p>
+                  </div>
+                  <div class="card4">
+                    <img src="./images/Update-icon.png" alt="">
+                    <h3>Regular Updates</h3>
+                    <p>Stay informed about security vulnerabilities and apply security patches and updates to your software and frameworks.</p>
+                    
+                  </div>
+            </div>
+              <div class="footer">
+              </div>
         </div>
     </div>
     <div class="nav security-topic">
@@ -73,3 +153,4 @@
     </div>
 </body>
 </html>
+ 

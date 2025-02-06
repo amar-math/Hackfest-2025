@@ -96,6 +96,13 @@ let timerInterval;
 let timerPaused = false;
 
 function createTryAgainButton() {
+  if (
+    document
+      .getElementById('feedbackSection')
+      .querySelector('.try-again-button')
+  ) {
+    return;
+  }
   const button = document.createElement('button');
   button.innerHTML = '<i class="fas fa-redo"></i> Try Again';
   button.className = 'try-again-button';
@@ -165,6 +172,10 @@ function checkLine(selectedLine) {
     document.getElementById('options').style.display = 'flex';
     showOptions(level);
     scrollToElement('feedbackSection');
+    document
+      .getElementById('feedbackSection')
+      .querySelector('.try-again-button')
+      .remove();
   } else {
     clearInterval(timerInterval);
     timerPaused = true;

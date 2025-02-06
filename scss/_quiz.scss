@@ -45,10 +45,39 @@ header {
 main {
     background: #2a2f43;
     border-radius: 10px;
-    padding: 5px 20px 50px;
-    width: 95%;
-    max-width: 500px;
-    margin: 0 auto 214px;
+    padding: 1.5rem 2rem 2rem;
+    //width: 80%;
+    max-width: 40rem;
+    margin: 0 auto 21.4rem;
+    position: relative;
+    box-shadow: 0 2rem 3rem rgba($color: #000000, $alpha: 0.8);
+ 
+    &::after, &::before{
+        content: '';
+        position: absolute;
+        width: 100.5%;
+        height: 100.5%;
+        background-image: conic-gradient(from var(--angle), #ffffff, #e74ac8,blue, yellow);
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        z-index: -1;
+        padding: .3rem;
+        border-radius: 1rem;
+        animation: 3s spin linear infinite;
+      }
+      &::before {
+        filter: blur(1.5rem);
+        opacity: 0.5;
+      }
+      @keyframes spin {
+        from{
+          --angle: 0deg;
+        }
+        to{
+          --angle: 360deg;
+        }
+      }
 }
 
 .text-container {
@@ -184,7 +213,9 @@ input:invalid+label {
 }
 
 input:invalid+label:hover {
-    background: linear-gradient(61deg, rgb(9, 14, 44) 0%, rgb(18, 44, 105) 59%, rgb(7, 141, 179) 100%);
+    //background: linear-gradient(61deg, rgb(9, 14, 44) 0%, rgb(18, 44, 105) 59%, rgb(7, 141, 179) 100%);
+    background:#f4f4f4;
+    color: #000 !important;
 }
 
 input:valid+label {
@@ -265,6 +296,44 @@ form:invalid #btn {
 .score-text {
     margin: 0 20px;
 }
+
+
+// .explanation {
+//     display: none;
+//     margin-top: 15px;
+//     padding: 10px;
+//     background-color: #f8f9fa;
+//     border-left: 5px solid #007bff;
+//     font-size: 14px;
+//     color: #333;
+// }    
+
+.exp {
+    // background: #fff !important;
+    // padding: 1rem;
+    // border-radius: 5px;
+    // //margin-top: 0.5rem;
+    // animation: slideUp 0.5s ease-out;
+    // //margin-bottom: 4rem;
+    // display: none;
+    // color: #000;
+
+    
+        background: rgba(255, 255, 255, 0.05);
+        padding: 1.5rem;
+        border-radius: 12px;
+        margin-top: 0.5rem;
+        animation: slideUp 0.5s ease-out;
+        margin-bottom: 4rem;
+        color:rgb(175, 226, 250);
+        display: none;
+    
+}
+
+.h3-margin {
+    margin-bottom: 0.2rem;
+}
+
 
 // .score-counter::after {
 //     content: counter(points) "/5";
