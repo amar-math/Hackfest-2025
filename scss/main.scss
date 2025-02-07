@@ -56,7 +56,17 @@ header {
     height:5rem;
    
     .company-logo {
-        flex-basis: 15%;
+        flex-basis: 50%;
+        img {
+            vertical-align: bottom;
+            margin-right: 2rem;
+        }
+        .try-fod-trial {
+            text-transform: uppercase;
+            a {
+                color: $primary-color;
+            }
+        }
     }
  
     .logo {

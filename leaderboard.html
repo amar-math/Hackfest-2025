@@ -6,21 +6,64 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Leaderboard - Security Gamification</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="./images/fav-icon.jpeg" type="x-icon">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web" defer></script>
 </head>
 <body>
     <header>
-        <div class="logo">Security Gamification</div>
+        <div class="company-logo">
+          <img src="./images/opentext-logo_inverse.svg" alt="OpenText">
+          <span class="try-fod-trial">
+              <a href="https://www.opentext.com/products/fortify-on-demand/trial" target="_blank">
+                  Explore AppSec products with a free trial
+              </a>
+          </span>
+        </div>
         <nav>
-            <a href="index.html">Home</a>
+          <a href="index.html"><i class="fa-solid fa-house fa-lg"></i></a>
+          <a href="#">
+            <i class="fa-solid fa-user fa-lg"></i>
+            User
+          </a>
         </nav>
     </header>
-
-    <section id="leaderboard">
-        <h2>Leaderboard</h2>
-        <div class="leaderboard-table">
-            <!-- Leaderboard content will be dynamically populated here -->
+    <div class="leaderboard-container">
+        <div id="leaderboard-header">
+          <h1>Ranking</h1>
         </div>
-    </section>
-    <script src="scripts.js"></script>
+        <div id="leaderboard">
+          <div class="ribbon"></div>
+          <table>
+            <tr>
+              <td class="number">1</td>
+              <td class="name">User1</td>
+              <td class="points">
+                100 <img class="gold-medal" src="https://github.com/malunaridev/Challenges-iCodeThis/blob/master/4-leaderboard/assets/gold-medal.png?raw=true" alt="gold medal"/>
+              </td>
+            </tr>
+            <tr>
+              <td class="number">2</td>
+              <td class="name">User2</td>
+              <td class="points">90</td>
+            </tr>
+            <tr>
+              <td class="number">3</td>
+              <td class="name">User3</td>
+              <td class="points">85</td>
+            </tr>
+            <tr>
+              <td class="number">4</td>
+              <td class="name">User4</td>
+              <td class="points">80</td>
+            </tr>
+            <tr>
+              <td class="number">5</td>
+              <td class="name">User5</td>
+              <td class="points">60</td>
+            </tr>
+          </table>
+        </div>
+      </main>
 </body>
 </html>
