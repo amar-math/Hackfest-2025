@@ -146,25 +146,140 @@ td {
     color: white; }
 
 /* line 18, scss/_learn.scss */
+.page1 .xss-understanding-title {
+  text-align: right;
+  font-size: 1.8rem;
+  margin: 2rem 16rem 0 0;
+  background-image: linear-gradient(-225deg, #5bbfed 10%, #dc45ed 67%, #fff800 100%);
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2.5s linear infinite; }
+
+/* line 33, scss/_learn.scss */
 .page1 .page1Container {
-  display: flex;
+  display: grid;
+  position: relative;
+  grid-gap: 2rem;
+  margin: 3rem;
   justify-content: center;
-  align-items: center;
-  gap: 5rem; }
+  grid-template-columns: 50% 1fr; }
+  @media screen and (max-width: 1200px) {
+    /* line 33, scss/_learn.scss */
+    .page1 .page1Container {
+      grid-template-columns: 1fr;
+      /* Stack items in a single column */
+      grid-gap: 3rem;
+      margin: 2rem; } }
+  /* line 46, scss/_learn.scss */
+  .page1 .page1Container .page1-text {
+    position: absolute;
+    left: 10%;
+    top: 4%;
+    transform: translate(-50%, -50%);
+    z-index: 10; }
+  /* line 56, scss/_learn.scss */
+  .page1 .page1Container .gradient-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 15rem);
+    grid-column-gap: 2rem;
+    grid-row-gap: 6rem; }
+    @media screen and (max-width: 1200px) {
+      /* line 56, scss/_learn.scss */
+      .page1 .page1Container .gradient-cards {
+        grid-template-columns: 1fr; } }
+  /* line 67, scss/_learn.scss */
+  .page1 .page1Container .container-title {
+    text-align: center;
+    padding: 0 !important;
+    margin-bottom: 40px;
+    font-size: 40px;
+    color: #fff;
+    font-weight: 600;
+    line-height: 60px; }
+  /* line 77, scss/_learn.scss */
+  .page1 .page1Container .card {
+    max-width: 550px;
+    border: 0;
+    width: 100%;
+    margin-inline: auto; }
+  /* line 84, scss/_learn.scss */
+  .page1 .page1Container .card1 {
+    border-radius: 45px;
+    position: relative;
+    height: 20rem;
+    background-clip: padding-box;
+    background-image: linear-gradient(to right, #fe7575, #dfa3a3); }
+  /* line 95, scss/_learn.scss */
+  .page1 .page1Container .card2 {
+    border-radius: 45px;
+    position: relative;
+    height: 20rem;
+    background-clip: padding-box;
+    background-image: linear-gradient(to right, #a3d2e8, #4dabd7); }
+  /* line 103, scss/_learn.scss */
+  .page1 .page1Container .card3 {
+    border-radius: 45px;
+    position: relative;
+    height: 20rem;
+    background-clip: padding-box;
+    background-image: linear-gradient(to right, #4dabd7, #a3d2e8); }
+  /* line 111, scss/_learn.scss */
+  .page1 .page1Container .card4 {
+    border-radius: 45px;
+    position: relative;
+    height: 20rem;
+    background-clip: padding-box;
+    background-image: linear-gradient(to right, #dfa3a3, #fe7575); }
+  /* line 119, scss/_learn.scss */
+  .page1 .page1Container .container-card {
+    position: relative;
+    height: 20rem;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    border-radius: 45px;
+    padding: 40px; }
+    /* line 126, scss/_learn.scss */
+    .page1 .page1Container .container-card img {
+      margin-bottom: 32px; }
+  /* line 131, scss/_learn.scss */
+  .page1 .page1Container .card-title {
+    font-weight: 600;
+    color: white;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    font-style: normal;
+    font-size: 1.4rem;
+    position: relative; }
+  /* line 141, scss/_learn.scss */
+  .page1 .page1Container .card-description {
+    font-weight: 600;
+    line-height: 32px;
+    color: #2a2f43;
+    font-size: 1.2rem; }
+    /* line 148, scss/_learn.scss */
+    .page1 .page1Container .card-description img {
+      position: absolute;
+      width: 8rem;
+      left: 60%;
+      top: 0%; }
 
-/* line 25, scss/_learn.scss */
+/* line 157, scss/_learn.scss */
 .page1 .image img {
-  height: 40rem;
-  /* Set the desired height */
-  width: 60rem; }
+  width: 100%; }
 
-/* line 30, scss/_learn.scss */
+/* line 161, scss/_learn.scss */
 .page1 .img-text {
   max-width: 40rem;
   /* Adjust width for better readability */
   font-size: 1.5rem;
   font-weight: bold; }
-  /* line 31, scss/_learn.scss */
+  /* line 162, scss/_learn.scss */
   .page1 .img-text p {
     background-image: linear-gradient(-225deg, #5bbfed 10%, #dc45ed 67%, #fff800 100%);
     background-size: auto auto;
@@ -179,24 +294,25 @@ td {
     text-fill-color: transparent;
     -webkit-text-fill-color: transparent; }
 
-/* line 62, scss/_learn.scss */
+/* line 187, scss/_learn.scss */
 .page1 img {
   width: 50%;
   height: auto;
   /* Maintains aspect ratio */
   object-fit: cover;
-  /* Ensures images cover their space */ }
+  /* Ensures images cover their space */
+  border-radius: 40px !important; }
 
-/* line 69, scss/_learn.scss */
+/* line 196, scss/_learn.scss */
 .page2 .slide2-container {
-  max-width: 85rem;
+  max-width: 95rem;
   margin: 10rem auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   gap: 5rem; }
 
-/* line 78, scss/_learn.scss */
+/* line 205, scss/_learn.scss */
 .page2 .card {
   position: relative;
   margin: 1rem 0;
@@ -208,13 +324,13 @@ td {
   transition: 1s;
   box-shadow: inset 10rem 0 5rem rgba(0, 0, 0, 0.5); }
 
-/* line 91, scss/_learn.scss */
+/* line 218, scss/_learn.scss */
 .page2 .card:hover {
   z-index: 1111;
   transform: perspective(200rem) rotate(-10deg);
   box-shadow: inset 2rem 0 5rem rgba(0, 0, 0, 0.5); }
 
-/* line 97, scss/_learn.scss */
+/* line 224, scss/_learn.scss */
 .page2 .card .img-container {
   position: relative;
   width: 100%;
@@ -225,7 +341,7 @@ td {
   z-index: 1;
   transition: 1s; }
 
-/* line 108, scss/_learn.scss */
+/* line 235, scss/_learn.scss */
 .page2 .card .img-container img {
   position: absolute;
   left: 0;
@@ -234,11 +350,11 @@ td {
   width: 100%;
   object-fit: cover; }
 
-/* line 117, scss/_learn.scss */
+/* line 244, scss/_learn.scss */
 .page2 .card:hover .img-container {
   transform: rotateY(-135deg); }
 
-/* line 121, scss/_learn.scss */
+/* line 248, scss/_learn.scss */
 .page2 .card .card-details {
   position: absolute;
   left: 0;
@@ -247,7 +363,7 @@ td {
   padding: 2rem;
   color: #000; }
 
-/* line 130, scss/_learn.scss */
+/* line 257, scss/_learn.scss */
 .page2 .card .card-details h2 {
   margin: 0;
   padding: 0.5em 0;
@@ -255,31 +371,31 @@ td {
   font-size: 2em;
   color: #ed363a; }
 
-/* line 138, scss/_learn.scss */
+/* line 265, scss/_learn.scss */
 .page2 .card .card-details p {
   margin: 0;
   padding: 0;
   line-height: 2.5rem;
   font-size: 1.1em; }
 
-/* line 146, scss/_learn.scss */
+/* line 274, scss/_learn.scss */
 .page3 .title {
   margin-bottom: 3rem;
   text-align: center; }
 
-/* line 150, scss/_learn.scss */
+/* line 278, scss/_learn.scss */
 .page3 .title h1 {
   font-size: 50px;
   font-family: 'Exo', sans-serif; }
 
-/* line 154, scss/_learn.scss */
+/* line 282, scss/_learn.scss */
 .page3 .mitigation-cards {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 5rem; }
 
-/* line 160, scss/_learn.scss */
+/* line 288, scss/_learn.scss */
 .page3 .card1 {
   text-align: center;
   width: 18%;
@@ -287,18 +403,19 @@ td {
   margin-top: 5rem !important;
   background: linear-gradient(#dfd9d2, #030918);
   transition: all .6s;
-  box-shadow: 0px 2rem 6rem rgba(0, 0, 0, 0.5); }
+  box-shadow: 0px 2rem 6rem rgba(0, 0, 0, 0.5);
+  border-radius: 2rem; }
 
-/* line 169, scss/_learn.scss */
+/* line 298, scss/_learn.scss */
 .page3 .card1:hover {
   transform: translateY(-2rem); }
 
-/* line 172, scss/_learn.scss */
+/* line 301, scss/_learn.scss */
 .page3 .card1 img {
   width: 13rem;
   height: 12rem; }
 
-/* line 176, scss/_learn.scss */
+/* line 305, scss/_learn.scss */
 .page3 h3 {
   font-size: 1.8rem;
   font-family: 'Abel', sans-serif;
@@ -307,7 +424,7 @@ td {
   transform: translatey(1rem);
   margin: 1rem 0; }
 
-/* line 185, scss/_learn.scss */
+/* line 314, scss/_learn.scss */
 .page3 p {
   margin-top: 3rem;
   padding-right: 2.5rem;
@@ -317,7 +434,7 @@ td {
   text-align: center;
   transform: translatex(1.2rem); }
 
-/* line 195, scss/_learn.scss */
+/* line 324, scss/_learn.scss */
 .page3 .card2 {
   text-align: center;
   width: 18%;
@@ -325,19 +442,20 @@ td {
   margin-top: 5rem;
   background: linear-gradient(#e6e6ec, #a558c2);
   transition: all .6s;
-  box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.5); }
+  box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.5);
+  border-radius: 2rem; }
 
-/* line 204, scss/_learn.scss */
+/* line 334, scss/_learn.scss */
 .page3 .card2:hover {
   transform: translateY(-2rem); }
 
-/* line 207, scss/_learn.scss */
+/* line 337, scss/_learn.scss */
 .page3 .card2 img {
   transform: translateY(15px);
   width: 10rem;
   height: 10rem; }
 
-/* line 212, scss/_learn.scss */
+/* line 342, scss/_learn.scss */
 .page3 .card3 {
   text-align: center;
   width: 18%;
@@ -346,37 +464,39 @@ td {
   margin-top: 5rem;
   background: linear-gradient(#eae9dd, #cb6c10);
   transition: all .6s;
-  box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.5); }
+  box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.5);
+  border-radius: 2rem; }
 
-/* line 222, scss/_learn.scss */
+/* line 353, scss/_learn.scss */
 .page3 .card3:hover {
   transform: translateY(-2rem); }
 
-/* line 225, scss/_learn.scss */
+/* line 356, scss/_learn.scss */
 .page3 .card3 img {
   width: 10rem;
   height: 10rem; }
 
-/* line 230, scss/_learn.scss */
+/* line 361, scss/_learn.scss */
 .page3 .card4 {
   text-align: center;
   width: 18%;
   min-height: 33rem;
   margin-top: 5rem;
-  background: linear-gradient(#f3eded, #3331f1);
+  background: linear-gradient(#f3eded, #302f9c);
   transition: all .6s;
-  box-shadow: 0px 2rem 6rem rgba(0, 0, 0, 0.5); }
+  box-shadow: 0px 2rem 6rem rgba(0, 0, 0, 0.5);
+  border-radius: 2rem; }
 
-/* line 239, scss/_learn.scss */
+/* line 371, scss/_learn.scss */
 .page3 .card4:hover {
   transform: translateY(-2rem); }
 
-/* line 242, scss/_learn.scss */
+/* line 374, scss/_learn.scss */
 .page3 .card4 img {
   width: 10rem;
   height: 10rem; }
 
-/* line 246, scss/_learn.scss */
+/* line 378, scss/_learn.scss */
 .page3 .footer {
   position: absolute;
   top: 500px;
@@ -384,22 +504,22 @@ td {
   width: 100%;
   text-align: center; }
 
-/* line 253, scss/_learn.scss */
+/* line 385, scss/_learn.scss */
 .page3 .footer h2 {
   font-size: 18px;
   font-family: 'Exo', sans-serif; }
 
-/* line 260, scss/_learn.scss */
+/* line 392, scss/_learn.scss */
 .page4 {
   background-image: linear-gradient(to right bottom, rgba(25, 34, 74, 0.5) 0%, rgba(34, 46, 97, 0.5) 25%, rgba(35, 52, 106, 0.5) 65%, rgba(20, 102, 147, 0.5) 90%, rgba(8, 140, 178, 0.5) 100%); }
-  /* line 263, scss/_learn.scss */
+  /* line 395, scss/_learn.scss */
   .page4 .thumbnails .box {
     transition: all 0.3s;
     box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.8); }
-  /* line 268, scss/_learn.scss */
+  /* line 400, scss/_learn.scss */
   .page4 .thumbnails .box:hover {
     transform: translateY(-1rem); }
-  /* line 271, scss/_learn.scss */
+  /* line 403, scss/_learn.scss */
   .page4 .video-title {
     text-align: center;
     margin-bottom: 3rem;
@@ -413,7 +533,7 @@ td {
     animation: textclip 2.5s linear infinite;
     font-size: 2rem; }
 
-/* line 296, scss/_learn.scss */
+/* line 427, scss/_learn.scss */
 .animate-card-title {
   background-image: linear-gradient(-225deg, #5bbfed 10%, #dc45ed 67%, #fff800 100%);
   background-size: auto auto;
@@ -431,7 +551,7 @@ td {
   -webkit-text-fill-color: transparent;
   font-size: 2rem; }
 
-/* line 319, scss/_learn.scss */
+/* line 450, scss/_learn.scss */
 .nav {
   position: fixed;
   top: 50%;
@@ -441,7 +561,7 @@ td {
   justify-content: space-between;
   align-items: center;
   padding: 0 0; }
-  /* line 328, scss/_learn.scss */
+  /* line 459, scss/_learn.scss */
   .nav a {
     text-decoration: none;
     padding: 1rem 2rem;
@@ -449,25 +569,25 @@ td {
     color: white;
     border-radius: .5rem;
     transition: all 0.3s; }
-    /* line 336, scss/_learn.scss */
+    /* line 467, scss/_learn.scss */
     .nav a:hover {
       background: rgba(0, 0, 0, 0.9); }
 
-/* line 342, scss/_learn.scss */
+/* line 473, scss/_learn.scss */
 .disabled {
   pointer-events: none;
   opacity: 0.5;
   cursor: not-allowed; }
 
-/* line 348, scss/_learn.scss */
+/* line 479, scss/_learn.scss */
 .knowledge-ai {
   text-align: center;
   font-size: 1.5rem; }
-  /* line 352, scss/_learn.scss */
+  /* line 483, scss/_learn.scss */
   .knowledge-ai a:link, .knowledge-ai a:visited {
     color: yellow;
     text-decoration: underline; }
-    /* line 355, scss/_learn.scss */
+    /* line 486, scss/_learn.scss */
     .knowledge-ai a:link:hover, .knowledge-ai a:visited:hover {
       color: white; }
 
@@ -2168,7 +2288,7 @@ header {
   background: #2a2f43;
   background-size: cover;
   flex-basis: 20%;
-  height: 35vh;
+  min-height: 35vh;
   display: flex;
   flex-direction: column;
   align-items: center;
