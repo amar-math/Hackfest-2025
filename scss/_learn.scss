@@ -143,41 +143,6 @@
     }
 }
 .page3 {
-  background-image: linear-gradient(to right bottom, rgba(25, 34, 74, 0.5) 0%, rgba(34, 46, 97, 0.5) 25%, rgba(35, 52, 106, 0.5) 65%, rgba(20, 102, 147, 0.5) 90%, rgba(8, 140, 178, 0.5) 100%);;
-
-  .thumbnails .box {
-      transition: all 0.3s;
-      box-shadow: 0 2rem 3rem rgba($color: #000000, $alpha: 0.8);
-  }
-
-  .thumbnails .box:hover {
-      transform: translateY(-1rem);
-  }
-  .video-title {
-      text-align: center;
-      margin-bottom: 3rem;
-      background-image: linear-gradient(
-          -225deg,
-          #5bbfed 10%,
-          #dc45ed 67%,
-          #fff800 100%
-      );
-      // background-size: auto auto;
-      // background-clip: border-box;
-      background-size: 200% auto;
-      color: #fff;
-      background-clip: text;
-      text-fill-color: transparent;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: textclip 2.5s linear infinite;
-      font-size: 2rem;
-      // display: inline-block;
-      // font-size: 2rem;
-  }
-}
-
-.page4 {
   .title{
       margin-bottom: 3rem;
       text-align: center;
@@ -291,6 +256,42 @@
      
     }
 }
+
+.page4 {
+  background-image: linear-gradient(to right bottom, rgba(25, 34, 74, 0.5) 0%, rgba(34, 46, 97, 0.5) 25%, rgba(35, 52, 106, 0.5) 65%, rgba(20, 102, 147, 0.5) 90%, rgba(8, 140, 178, 0.5) 100%);;
+
+  .thumbnails .box {
+      transition: all 0.3s;
+      box-shadow: 0 2rem 3rem rgba($color: #000000, $alpha: 0.8);
+  }
+
+  .thumbnails .box:hover {
+      transform: translateY(-1rem);
+  }
+  .video-title {
+      text-align: center;
+      margin-bottom: 3rem;
+      background-image: linear-gradient(
+          -225deg,
+          #5bbfed 10%,
+          #dc45ed 67%,
+          #fff800 100%
+      );
+      // background-size: auto auto;
+      // background-clip: border-box;
+      background-size: 200% auto;
+      color: #fff;
+      background-clip: text;
+      text-fill-color: transparent;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: textclip 2.5s linear infinite;
+      font-size: 2rem;
+      // display: inline-block;
+      // font-size: 2rem;
+  }
+}
+
 
 .animate-card-title {
   background-image: linear-gradient(
