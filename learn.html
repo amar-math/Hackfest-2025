@@ -23,19 +23,27 @@
             <img src="./images/opentext-logo_inverse.svg" alt="OpenText">
         </div>
         <nav>
-            <a href="index.html">Home</a>
+            <a href="index.html"><i class="fa-solid fa-house fa-lg"></i></a>
         </nav>
     </header>
-    <div id="page1">
-       
-    </div>
+    <div id="page1"></div>
     <div id="page2"></div>
     <div id="page3"></div>
     <div id="page4"></div>
     <div class="container">
         <div class="page page1">
-            <img src="images/WhatIsXss.png" alt="">
-        </div>
+            <div class="page1Container">
+              <div class="image">
+                <img src="./images/XssAttack.png" alt="">
+              </div>
+              <div class="img-text">
+                <p>What is XSS ?<p>
+                <div>
+                  Cross-Site Scripting (XSS) is a type of security vulnerability that occurs when an attacker injects malicious code, usually in the form of JavaScript, into a website. This code is then executed by the user's browser, allowing the attacker to steal sensitive information, modify the website's behavior, or perform other malicious actions.
+                </div>
+              </div>
+            </div>
+          </div>
         <div class="page page2">
             <h2 class="animate-card-title">Hover on cards to know common types of XSS Attacks</h2>
             <div class="slide2-container">
@@ -45,18 +53,26 @@
                   </div>
                   <div class="card-details">
                     <h2>Stored XSS</h2>
-                    <p>Attackers inject malicious scripts into a website's data storage, such as a database or comment section, which are later retrieved and executed by other users</p>
-                  </div>
+                    <p>Stored cross-site scripting (XSS) is a type of attack that involves injecting malicious scripts into a web application. The malicious script is then stored on the server, and every time a user visits the page, the script is executed</p>
+                    <p style="font-weight: bold;">How Stored XSS Works ?</p>
+                    <p>1. Attacker injects malicious code.</p>
+                    <p>2. Code is stored on the server.</p>
+                    <p>3.Code is executed by other users.</p>  
+                </div>
                 </div>
                  <div class="card">
                   <div class="img-container">
-                    <img src="./images/ReflectedXss.jpg" alt=""/>
+                    <img src="./images/Reflected.jpg" alt=""/>
                   </div>
                   <div class="card-details">
                     <h2>Reflected XSS</h2>
-                    <p>Attackers craft malicious scripts that are reflected back to the user from the server after being submitted in a request, such as through search queries or form inputs.
-                    </p>
-                  </div>
+                    <p>Attackers craft malicious scripts that are reflected back to the user from the server after being submitted in a request, such as through search queries or form inputs.</p>
+                  <p style="font-weight: bold;">How Reflected XSS Works ?</p>
+                  <p>1.Attacker crafts malicious link.</p>
+                  <p>2.User clicks link or submits form.</p>
+                  <p>3.Website reflects malicious code.</p>
+                  <p>4.Malicious code is executed.</p>
+                </div>
                 </div>
                  <div class="card">
                   <div class="img-container">
@@ -65,7 +81,12 @@
                   <div class="card-details">
                     <h2>DOM-Based XSS</h2>
                     <p>Attackers exploit vulnerabilities in a website's client-side JavaScript code to execute malicious scripts without requiring server-side interactions</p>
-                  </div>
+                    <p style="font-weight: bold;">How DOM-Based XSS Works ?</p>
+                    <p>1.Attacker injects malicious code.</p>
+                    <p>2.Malicious code is executed.</p>
+                    <p>3.No server-side reflection.</p>
+                    <p>4.Malicious code is executed.</p>
+                </div>
                 </div>
                 </div>
         </div>
@@ -122,13 +143,13 @@
                     <p>Filter and sanitize user inputs before processing, removing or escaping potentially harmful characters.
                     </p>
                   </div>
-                  
+                 
                   <div class="card2">
-                    <img src="./images/OutputEncoding.png" alt="Eiffel Tower">
+                    <img src="./images/OutputEncoding.png" alt="">
                     <h3>Output Encoding</h3>
                     <p>Encode output before rendering it to the browser, preventing malicious scripts from being interpreted as HTML.</p>
                   </div>
-                  
+                 
                   <div class="card3">
                     <img src="./images/vectorLock.png" alt="">
                     <h3>Content Security Policy (CSP)
@@ -137,10 +158,10 @@
                     </p>
                   </div>
                   <div class="card4">
-                    <img src="./images/Update-icon.png" alt="">
+                    <img src="./images/update-icon-new.png" alt="">
                     <h3>Regular Updates</h3>
                     <p>Stay informed about security vulnerabilities and apply security patches and updates to your software and frameworks.</p>
-                    
+                   
                   </div>
             </div>
               <div class="footer">

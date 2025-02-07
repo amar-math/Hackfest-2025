@@ -14,7 +14,7 @@
             <img src="./images/opentext-logo_inverse.svg" alt="OpenText">
         </div>
         <nav>
-            <a href="index.html">Home</a>
+            <a href="index.html"><i class="fa-solid fa-house fa-lg"></i></a>
         </nav>
     </header>
     <div class="quiz-all-section">
@@ -42,8 +42,8 @@
                             <span class="alphabet">C</span> Direct access to the backend database 
                         </label>
                     </br>
-                        <div id="exp" class="exp">
-                            <h3><i class="fas fa-lightbulb"></i> Explanation</h3>
+                        <div id="exp1" class="exp">
+                            <h3><i class="fas fa-lightbulb text-yellow"></i> Explanation</h3>
                         </br>
                             <span id="explanationText" style="font-weight: 600;">Answer: A) Stolen session cookies</span>
                             <p id="explanationText">A successful XSS attack can steal sensitive information, including session cookies, which can be used to impersonate the user.</p>
@@ -77,7 +77,7 @@
                             <span class="alphabet">C</span> All of the above
                         </label>
                     </br>
-                    <div id="exp" class="exp">
+                    <div id="exp2" class="exp">
                         <h3><i class="fas fa-lightbulb"></i> Explanation</h3>
                     </br>
                         <span id="explanationText" style="font-weight: 600;">Answer: C) All of the above</span>
@@ -112,7 +112,7 @@
                             <span class="alphabet">C</span> Validating and sanitizing input
                         </label>
                     </br>
-                    <div id="exp" class="exp">
+                    <div id="exp3" class="exp">
                         <h3><i class="fas fa-lightbulb"></i> Explanation</h3>
                     </br>
                         <span id="explanationText" style="font-weight: 600;">C) Validating and sanitizing input</span>
@@ -147,7 +147,7 @@
                             <span class="alphabet">C</span> Using AI to automatically patch vulnerabilities
                         </label>
                     </br>
-                    <div id="exp" class="exp">
+                    <div id="exp4" class="exp">
                         <h3><i class="fas fa-lightbulb"></i> Explanation</h3>
                     </br>
                         <span id="explanationText" style="font-weight: 600;">B) Machine learning models to detect malicious JavaScript in real-time</span>
@@ -182,7 +182,7 @@
                             <span class="alphabet">C</span> Disabling JavaScript execution on all web pages 
                         </label>
                     </br>
-                    <div id="exp" class="exp">
+                    <div id="exp5" class="exp">
                         <h3><i class="fas fa-lightbulb"></i> Explanation</h3>
                     </br>
                         <span id="explanationText" style="font-weight: 600;">A) Content Security Policy (CSP)</span>
@@ -202,7 +202,10 @@
         <section id="game-over">
             <div class="game-over-content">
                 <div class="over-text-cont">
+                    <img src="./images/WS2k.gif">
                     <h1 data-heading="Game Over"> Mission Accomplished!</h1>
+                    
+                    <!-- <img src="./images/mission-impossible-we-got-this.gif" alt=""> -->
                     <h2>Total Score:<span class="final-score-point"></span></h2>
                     
                     <a id="btn" type="submit" onclick="window.location.href='quiz.html'">Play Again</a>
@@ -230,29 +233,32 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-        let score = 0;
-        const choices = document.querySelectorAll(".input-radio");
-
-        choices.forEach((choice) => {
-            choice.addEventListener("change", function () {
-                score = document.querySelectorAll(".correctChoice:checked").length;
-                document.querySelector(".score-point").textContent = `${score} /5`;
+            let score = 0;
+            const choices = document.querySelectorAll(".input-radio");
+ 
+            choices.forEach((choice) => {
+                choice.addEventListener("change", function () {
+                    score = document.querySelectorAll(".correctChoice:checked").length;
+                    document.querySelector(".score-point").textContent = `${score} /5`;
+                });
             });
-        });
-
-        window.addEventListener("hashchange", function () {
-            if (window.location.hash === "#game-over") {
-                document.querySelector(".final-score-point").textContent = `${score} /5`;
-                document.querySelector('.score-counter').style.visibility = 'hidden';
+ 
+            window.addEventListener("hashchange", function () {
+                updateExplanation();
+                if (window.location.hash === "#game-over") {
+                    document.querySelector(".final-score-point").textContent = `${score} /5`;
+                    document.querySelector('.score-counter').style.visibility = 'hidden';
+                }
+            });
+ 
+            const updateExplanation = () => {
+                document.querySelectorAll('.input-radio').forEach(radio => {
+                    radio.addEventListener('change', function (e) {
+                        e.target.parentElement.querySelector('.exp').style.display = 'block';
+                    });
+                });
             }
-        });
-
-        document.querySelectorAll('.input-radio').forEach(radio => {
-            radio.addEventListener('change', function () {
-                document.getElementById('exp').style.display = 'block';
-                
-        });
-    });
+        updateExplanation();
     });
     </script>
       <!-- QUIZ ONE -->

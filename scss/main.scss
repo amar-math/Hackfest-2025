@@ -162,7 +162,7 @@ header {
     &::after, &::before{
         content: '';
         position: absolute;
-        height: 100%;
+        height: 101%;
         width: 101%;
         background-image: conic-gradient(from var(--angle), #ab4141, #00ff99, #006aff, #ff0095, #ff4545);
         top: 50%;
@@ -193,9 +193,9 @@ header {
 }
  
 .course-btn {
-    background-color:#90e8cf !important;//rgba(216, 89, 230, 0.767);
+    background-color:#53ccaa !important;//rgba(216, 89, 230, 0.767);
     color: #000 !important;
-    border: solid 1px white;
+   // border: solid 2px rgb(244, 248, 249);
     cursor: pointer;
     border-radius: .5rem;
     margin-bottom: 1rem;
@@ -203,6 +203,7 @@ header {
     width:14rem;
     border-radius: 20px;
     height: 3rem;
+    //font-weight: bold;
  
     &:hover {
         background-color: #fff !important;
